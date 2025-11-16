@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Довідник Bootstrap компонентів</title>
-    
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Інтерактивний довідник Bootstrap компонентів</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<style>
+body {font-family: Arial, sans-serif;}
+.sidebar {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    border-right: 1px solid #ddd;
+    padding-left: 10px;
+}
+main h2 {border-bottom: 2px solid #eee; padding-bottom: 5px; margin-bottom: 20px;}
+.code-box {margin-top: 10px;}
+textarea {width:100%; height:120px; font-family: monospace; margin-bottom:5px;}
+iframe {width:100%; height:200px; border:1px solid #ddd; margin-top:5px;}
+.run-btn, .reset-btn {margin-right:5px;}
+</style>
 </head>
 <body>
 
 <!-- Верхнє меню -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="#">Bootstrap Довідник</a>
-  </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
+<div class="container"><a class="navbar-brand" href="#">Bootstrap Довідник</a></div>
 </nav>
 
 <div class="container-fluid">
@@ -22,315 +33,188 @@
 
     <!-- Бічне меню -->
     <nav class="col-md-3 col-lg-2 bg-light sidebar pt-3">
-  <h5>Компоненти</h5>
-  <ul class="nav flex-column">
-
-    <!-- Кнопки -->
-      
-    <li class="nav-item"><strong class="nav-link">Кнопки</strong></li>
-    <li class="nav-item"><a class="nav-link ms-3" href="#buttons-basic">• Базові</a></li>
-    <li class="nav-item"><a class="nav-link ms-3" href="#buttons-outline">• Контурні</a></li>
-    <li class="nav-item"><a class="nav-link ms-3" href="#buttons-sizes">• Розміри</a></li>
-
-    <!-- Картки -->
-    <li class="nav-item mt-3"><strong class="nav-link">Картки</strong></li>
-    <li class="nav-item"><a class="nav-link ms-3" href="#cards-basic">• Проста картка</a></li>
-    <li class="nav-item"><a class="nav-link ms-3" href="#cards-image">• Картка з фото</a></li>
-    <li class="nav-item"><a class="nav-link ms-3" href="#cards-group">• Група карток</a></li>
-
-    <!-- Повідомлення -->
-    <li class="nav-item mt-3"><strong class="nav-link">Повідомлення</strong></li>
-    <li class="nav-item"><a class="nav-link ms-3" href="#alerts">• Alerts</a></li>
-
-    <!-- Карусель -->
-    <li class="nav-item mt-3"><strong class="nav-link">Карусель</strong></li>
-    <li class="nav-item"><a class="nav-link ms-3" href="#carousel">• Базовий приклад</a></li>
-
-    <!-- Форми -->
-    <li class="nav-item mt-3"><strong class="nav-link">Форми</strong></li>
-    <li class="nav-item"><a class="nav-link ms-3" href="#forms">• Приклад форми</a></li>
-  </ul>
-</nav>
-
+      <h5>Компоненти</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item"><strong class="nav-link">Кнопки</strong></li>
+        <li class="nav-item"><a class="nav-link ms-3" href="#buttons-basic">Базові</a></li>
+        <li class="nav-item"><a class="nav-link ms-3" href="#buttons-outline">Контурні</a></li>
+        <li class="nav-item"><a class="nav-link ms-3" href="#buttons-sizes">Розміри</a></li>
+        <li class="nav-item mt-3"><strong class="nav-link">Картки</strong></li>
+        <li class="nav-item"><a class="nav-link ms-3" href="#cards-basic">Проста картка</a></li>
+        <li class="nav-item"><a class="nav-link ms-3" href="#cards-image">З фото</a></li>
+        <li class="nav-item"><a class="nav-link ms-3" href="#cards-group">Група карток</a></li>
+        <li class="nav-item mt-3"><strong class="nav-link">Повідомлення</strong></li>
+        <li class="nav-item"><a class="nav-link ms-3" href="#alerts">Alerts</a></li>
+        <li class="nav-item mt-3"><strong class="nav-link">Карусель</strong></li>
+        <li class="nav-item"><a class="nav-link ms-3" href="#carousel">Базовий приклад</a></li>
+        <li class="nav-item mt-3"><strong class="nav-link">Форми</strong></li>
+        <li class="nav-item"><a class="nav-link ms-3" href="#forms">Приклад форми</a></li>
+      </ul>
+    </nav>
 
     <!-- Основний контент -->
     <main class="col-md-9 col-lg-10 p-4">
+      <h1 class="mb-4">Інтерактивний довідник Bootstrap компонентів</h1>
 
-      <h1 class="mb-4">Демонстраційний довідник Bootstrap компонентів</h1>
+      <!-- Buttons: базові -->
+      <section id="buttons-basic" class="mb-5">
+        <h2>Кнопки — базові</h2>
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-danger">Danger</button>
 
-      <!-- Кнопки -->
-        <!-- Кнопки: базові -->
-<section id="buttons-basic" class="mb-5">
-  <h2>Кнопки — базові</h2>
-  <button class="btn btn-primary">Primary</button>
-  <button class="btn btn-secondary">Secondary</button>
-  <button class="btn btn-success">Success</button>
-  <button class="btn btn-danger">Danger</button>
-  <button class="btn btn-warning">Warning</button>
-  <button class="btn btn-info">Info</button>
-  <button class="btn btn-light">Light</button>
-  <button class="btn btn-dark">Dark</button>
-</section>
-
-<!-- Інтерактивна демонстрація -->
-<div class="mt-3">
-  <h4>Інтерактивний редактор</h4>
-
-  <textarea id="editor-buttons-basic" class="form-control" rows="6">
-<button class="btn btn-primary">Primary</button>
-<button class="btn btn-secondary">Secondary</button>
-<button class="btn btn-success">Success</button>
-<button class="btn btn-danger">Danger</button>
-  </textarea>
-
-  <div class="mt-2">
-    <button class="btn btn-success" onclick="runDemo('editor-buttons-basic','iframe-buttons-basic')">Запустити</button>
-    <button class="btn btn-warning" onclick="resetDemo('editor-buttons-basic')">Відновити оригінал</button>
-  </div>
-
-  <iframe id="iframe-buttons-basic" class="w-100 mt-3" style="height:150px; border:1px solid #ccc;"></iframe>
-</div>
-
-        
-<!-- Кнопки: контурні -->
-<section id="buttons-outline" class="mb-5">
-  <h2>Кнопки — контурні</h2>
-  <button class="btn btn-outline-primary">Primary</button>
-  <button class="btn btn-outline-secondary">Secondary</button>
-  <button class="btn btn-outline-success">Success</button>
-  <button class="btn btn-outline-danger">Danger</button>
-</section>
-
-<!-- Кнопки: розміри -->
-<section id="buttons-sizes" class="mb-5">
-  <h2>Кнопки — різні розміри</h2>
-  <button class="btn btn-primary btn-lg">Велика</button>
-  <button class="btn btn-primary">Звичайна</button>
-  <button class="btn btn-primary btn-sm">Мала</button>
-</section>
-
-      <section id="buttons" class="mb-5">
-        <h2>Кнопки</h2>
-        <button class="btn btn-primary">Основна кнопка</button>
-        <button class="btn btn-secondary">Сірий стиль</button>
-        <button class="btn btn-success">Успіх</button>
-        <button class="btn btn-danger">Помилка</button>
-        <button class="btn btn-outline-dark">Контур</button>
+        <textarea id="code-buttons-basic">&lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
+&lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;</textarea>
+        <button class="btn btn-success run-btn" onclick="runDemo('code-buttons-basic','iframe-buttons-basic')">Run</button>
+        <button class="btn btn-warning reset-btn" onclick="resetDemo('code-buttons-basic')">Reset</button>
+        <iframe id="iframe-buttons-basic"></iframe>
       </section>
 
-<!-- Інтерактивний приклад: Кнопки — базові -->
-<h4 class="mt-4">🧪 Інтерактивний приклад</h4>
+      <!-- Кнопки: контурні -->
+      <section id="buttons-outline" class="mb-5">
+        <h2>Кнопки — контурні</h2>
+        <button class="btn btn-outline-primary">Primary</button>
+        <button class="btn btn-outline-secondary">Secondary</button>
 
-<textarea id="demo-buttons-basic" class="form-control" rows="6">
-<button class="btn btn-primary">Primary</button>
-<button class="btn btn-secondary">Secondary</button>
-<button class="btn btn-success">Success</button>
-<button class="btn btn-danger">Danger</button>
-<button class="btn btn-warning">Warning</button>
-<button class="btn btn-info">Info</button>
-<button class="btn btn-light">Light</button>
-<button class="btn btn-dark">Dark</button>
-</textarea>
+        <textarea id="code-buttons-outline">&lt;button class="btn btn-outline-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn-outline-secondary"&gt;Secondary&lt;/button&gt;</textarea>
+        <button class="btn btn-success run-btn" onclick="runDemo('code-buttons-outline','iframe-buttons-outline')">Run</button>
+        <button class="btn btn-warning reset-btn" onclick="resetDemo('code-buttons-outline')">Reset</button>
+        <iframe id="iframe-buttons-outline"></iframe>
+      </section>
 
-<div class="mt-2">
-  <button class="btn btn-success" onclick="runDemo('demo-buttons-basic','out-buttons-basic')">▶ Запустити код</button>
-  <button class="btn btn-outline-secondary" onclick="resetDemo('demo-buttons-basic')">🔄 Відновити</button>
-</div>
+      <!-- Кнопки: розміри -->
+      <section id="buttons-sizes" class="mb-5">
+        <h2>Кнопки — різні розміри</h2>
+        <button class="btn btn-primary btn-lg">Велика</button>
+        <button class="btn btn-primary">Звичайна</button>
+        <button class="btn btn-primary btn-sm">Мала</button>
 
-<iframe id="out-buttons-basic" class="w-100 mt-3" style="height:150px; border:1px solid #ccc;"></iframe>
+        <textarea id="code-buttons-sizes">&lt;button class="btn btn-primary btn-lg"&gt;Велика&lt;/button&gt;
+&lt;button class="btn btn-primary"&gt;Звичайна&lt;/button&gt;
+&lt;button class="btn btn-primary btn-sm"&gt;Мала&lt;/button&gt;</textarea>
+        <button class="btn btn-success run-btn" onclick="runDemo('code-buttons-sizes','iframe-buttons-sizes')">Run</button>
+        <button class="btn btn-warning reset-btn" onclick="resetDemo('code-buttons-sizes')">Reset</button>
+        <iframe id="iframe-buttons-sizes"></iframe>
+      </section>
 
+      <!-- Cards: проста -->
+      <section id="cards-basic" class="mb-5">
+        <h2>Картка — проста</h2>
+        <div class="card" style="width:18rem;"><div class="card-body"><h5 class="card-title">Заголовок</h5><p class="card-text">Проста картка без фото.</p></div></div>
 
-        
-      <!-- Картки -->
-        <!-- Картки: проста -->
-<section id="cards-basic" class="mb-5">
-  <h2>Картка — проста</h2>
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Заголовок</h5>
-      <p class="card-text">Проста картка без фото.</p>
-    </div>
-  </div>
-</section>
-<button class="btn btn-secondary show-code-btn" onclick="toggleCode('code-card-basic')">Показати код</button>
-
-<div id="code-card-basic" class="code-box">
-&lt;div class="card" style="width:18rem;"&gt;
+        <textarea id="code-cards-basic">&lt;div class="card" style="width:18rem;"&gt;
   &lt;div class="card-body"&gt;
     &lt;h5 class="card-title"&gt;Заголовок&lt;/h5&gt;
-    &lt;p class="card-text"&gt;Короткий опис.&lt;/p&gt;
+    &lt;p class="card-text"&gt;Проста картка без фото.&lt;/p&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-</div>
-
-        
-        
-<!-- Картка з фото -->
-<section id="cards-image" class="mb-5">
-  <h2>Картка з фото</h2>
-  <div class="card" style="width: 18rem;">
-    <img src="https://picsum.photos/300/200" class="card-img-top">
-    <div class="card-body">
-      <h5 class="card-title">Картка з зображенням</h5>
-      <p class="card-text">Фото + текст + кнопка.</p>
-      <a href="#" class="btn btn-primary">Кнопка</a>
-    </div>
-  </div>
-</section>
-
-<!-- Група карток -->
-<section id="cards-group" class="mb-5">
-  <h2>Група карток</h2>
-  <div class="card-group">
-    <div class="card">
-      <img src="https://picsum.photos/300/200?1" class="card-img-top">
-      <div class="card-body"><h5 class="card-title">Перша</h5></div>
-    </div>
-    <div class="card">
-      <img src="https://picsum.photos/300/200?2" class="card-img-top">
-      <div class="card-body"><h5 class="card-title">Друга</h5></div>
-    </div>
-    <div class="card">
-      <img src="https://picsum.photos/300/200?3" class="card-img-top">
-      <div class="card-body"><h5 class="card-title">Третя</h5></div>
-    </div>
-  </div>
-</section>
-
-      <section id="cards" class="mb-5">
-        <h2>Картки</h2>
-        <div class="card" style="width: 18rem;">
-          <img src="https://via.placeholder.com/300" class="card-img-top" alt="">
-          <div class="card-body">
-            <h5 class="card-title">Заголовок картки</h5>
-            <p class="card-text">Короткий текст всередині картки.</p>
-            <a href="#" class="btn btn-primary">Перейти</a>
-          </div>
-        </div>
+&lt;/div&gt;</textarea>
+        <button class="btn btn-success run-btn" onclick="runDemo('code-cards-basic','iframe-cards-basic')">Run</button>
+        <button class="btn btn-warning reset-btn" onclick="resetDemo('code-cards-basic')">Reset</button>
+        <iframe id="iframe-cards-basic"></iframe>
       </section>
 
-      <!-- Повідомлення -->
+      <!-- Cards: з фото -->
+      <section id="cards-image" class="mb-5">
+        <h2>Картка з фото</h2>
+        <div class="card" style="width:18rem;"><img src="https://picsum.photos/300/200" class="card-img-top"><div class="card-body"><h5 class="card-title">Картка з фото</h5><p class="card-text">Фото + текст + кнопка.</p><a href="#" class="btn btn-primary">Кнопка</a></div></div>
+
+        <textarea id="code-cards-image">&lt;div class="card" style="width:18rem;"&gt;
+  &lt;img src="https://picsum.photos/300/200" class="card-img-top"&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Картка з фото&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Фото + текст + кнопка.&lt;/p&gt;
+    &lt;a href="#" class="btn btn-primary"&gt;Кнопка&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</textarea>
+        <button class="btn btn-success run-btn" onclick="runDemo('code-cards-image','iframe-cards-image')">Run</button>
+        <button class="btn btn-warning reset-btn" onclick="resetDemo('code-cards-image')">Reset</button>
+        <iframe id="iframe-cards-image"></iframe>
+      </section>
+
+      <!-- Alerts -->
       <section id="alerts" class="mb-5">
         <h2>Повідомлення (alert)</h2>
         <div class="alert alert-success">Успішна операція!</div>
         <div class="alert alert-warning">Попередження!</div>
         <div class="alert alert-danger">Помилка!</div>
-      </section>
-<button class="btn btn-secondary show-code-btn" onclick="toggleCode('code-alert')">Показати код</button>
 
-<div id="code-alert" class="code-box">
-&lt;div class="alert alert-success"&gt;Успіх!&lt;/div&gt;
+        <textarea id="code-alerts">&lt;div class="alert alert-success"&gt;Успішна операція!&lt;/div&gt;
 &lt;div class="alert alert-warning"&gt;Попередження!&lt;/div&gt;
-&lt;div class="alert alert-danger"&gt;Помилка!&lt;/div&gt;
-</div>
+&lt;div class="alert alert-danger"&gt;Помилка!&lt;/div&gt;</textarea>
+        <button class="btn btn-success run-btn" onclick="runDemo('code-alerts','iframe-alerts')">Run</button>
+        <button class="btn btn-warning reset-btn" onclick="resetDemo('code-alerts')">Reset</button>
+        <iframe id="iframe-alerts"></iframe>
+      </section>
 
-        
-
-      <!-- Карусель -->
+      <!-- Carousel -->
       <section id="carousel" class="mb-5">
-  <h2>Карусель</h2>
-
-  <div id="demoCarousel" class="carousel slide" data-bs-ride="carousel">
-    <!-- Індикатори -->
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#demoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#demoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#demoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-
-    <!-- Слайди -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://picsum.photos/seed/pic1/1200/400" class="d-block w-100" alt="Зображення 1">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Перший слайд</h5>
-          <p>Опис першого слайду</p>
+        <h2>Карусель</h2>
+        <div id="demoCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active"><img src="https://picsum.photos/seed/pic1/1200/400" class="d-block w-100"></div>
+            <div class="carousel-item"><img src="https://picsum.photos/seed/pic2/1200/400" class="d-block w-100"></div>
+            <div class="carousel-item"><img src="https://picsum.photos/seed/pic3/1200/400" class="d-block w-100"></div>
+          </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <img src="https://picsum.photos/seed/pic2/1200/400" class="d-block w-100" alt="Зображення 2">
-      </div>
-      <div class="carousel-item">
-        <img src="https://picsum.photos/seed/pic3/1200/400" class="d-block w-100" alt="Зображення 3">
-      </div>
-    </div>
 
-    <!-- Керування -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#demoCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Попередній</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#demoCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Наступний</span>
-    </button>
-  </div>
-</section>
+        <textarea id="code-carousel">&lt;div id="demoCarousel" class="carousel slide" data-bs-ride="carousel"&gt;
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="carousel-item active"&gt;&lt;img src="https://picsum.photos/seed/pic1/1200/400" class="d-block w-100"&gt;&lt;/div&gt;
+    &lt;div class="carousel-item"&gt;&lt;img src="https://picsum.photos/seed/pic2/1200/400" class="d-block w-100"&gt;&lt;/div&gt;
+    &lt;div class="carousel-item"&gt;&lt;img src="https://picsum.photos/seed/pic3/1200/400" class="d-block w-100"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</textarea>
+        <button class="btn btn-success run-btn" onclick="runDemo('code-carousel','iframe-carousel')">Run</button>
+        <button class="btn btn-warning reset-btn" onclick="resetDemo('code-carousel')">Reset</button>
+        <iframe id="iframe-carousel"></iframe>
+      </section>
 
-
-      <!-- Форми -->
+      <!-- Forms -->
       <section id="forms" class="mb-5">
         <h2>Форми</h2>
         <input class="form-control mb-2" type="text" placeholder="Введіть текст...">
         <input class="form-control mb-2" type="email" placeholder="Email">
         <button class="btn btn-primary">Надіслати</button>
+
+        <textarea id="code-forms">&lt;input class="form-control mb-2" type="text" placeholder="Введіть текст..."&gt;
+&lt;input class="form-control mb-2" type="email" placeholder="Email"&gt;
+&lt;button class="btn btn-primary"&gt;Надіслати&lt;/button&gt;</textarea>
+        <button class="btn btn-success run-btn" onclick="runDemo('code-forms','iframe-forms')">Run</button>
+        <button class="btn btn-warning reset-btn" onclick="resetDemo('code-forms')">Reset</button>
+        <iframe id="iframe-forms"></iframe>
       </section>
 
     </main>
   </div>
 </div>
 
-<!-- Bootstrap JS -->
+<a href="#" class="btn btn-dark position-fixed" style="right:20px; bottom:20px;">↑ Вгору</a>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<a href="#" class="btn btn-dark position-fixed" style="right:20px; bottom:20px;">↑ Вгору</a>
 <script>
-  function toggleCode(id) {
-    const box = document.getElementById(id);
-    box.style.display = box.style.display === "none" ? "block" : "none";
-  }
+const originalCode = {};
+window.onload = function() {
+  document.querySelectorAll("textarea[id]").forEach(t => {originalCode[t.id] = t.value;});
+}
+
+function runDemo(textareaId, iframeId) {
+  const code = document.getElementById(textareaId).value;
+  const iframe = document.getElementById(iframeId);
+  const doc = iframe.contentDocument || iframe.contentWindow.document;
+  doc.open();
+  doc.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"><body style="padding:10px;">' + code + '</body>');
+  doc.close();
+}
+
+function resetDemo(textareaId) {
+  if(originalCode[textareaId]) document.getElementById(textareaId).value = originalCode[textareaId];
+}
 </script>
 
-<script>
-  // Зберігаємо початковий код у словнику
-  const originalCode = {};
-
-  function runDemo(textareaId, iframeId) {
-    const code = document.getElementById(textareaId).value;
-
-    const iframe = document.getElementById(iframeId);
-    const doc = iframe.contentDocument || iframe.contentWindow.document;
-
-    // Підключаємо Bootstrap всередину iframe
-    doc.open();
-    doc.write(`
-      <html>
-      <head>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-      </head>
-      <body style="padding:10px;">
-        ${code}
-      </body>
-      </html>
-    `);
-    doc.close();
-  }
-
-  function resetDemo(textareaId) {
-    if (originalCode[textareaId]) {
-      document.getElementById(textareaId).value = originalCode[textareaId];
-    }
-  }
-
-  // Зберігаємо початковий текст після завантаження
-  window.onload = function() {
-    const textareas = document.querySelectorAll("textarea[id]");
-    textareas.forEach(t => {
-      originalCode[t.id] = t.value;
-    });
-  }
-</script>
-
-    
 </body>
 </html>
