@@ -118,14 +118,27 @@
         <button class="btn btn-outline-dark">Контур</button>
       </section>
 
-<button class="btn btn-secondary show-code-btn" onclick="toggleCode('code-buttons-basic')">Показати код</button>
+<!-- Інтерактивний приклад: Кнопки — базові -->
+<h4 class="mt-4">🧪 Інтерактивний приклад</h4>
 
-<div id="code-buttons-basic" class="code-box">
-&lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
-&lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
-&lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
-&lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;
+<textarea id="demo-buttons-basic" class="form-control" rows="6">
+<button class="btn btn-primary">Primary</button>
+<button class="btn btn-secondary">Secondary</button>
+<button class="btn btn-success">Success</button>
+<button class="btn btn-danger">Danger</button>
+<button class="btn btn-warning">Warning</button>
+<button class="btn btn-info">Info</button>
+<button class="btn btn-light">Light</button>
+<button class="btn btn-dark">Dark</button>
+</textarea>
+
+<div class="mt-2">
+  <button class="btn btn-success" onclick="runDemo('demo-buttons-basic','out-buttons-basic')">▶ Запустити код</button>
+  <button class="btn btn-outline-secondary" onclick="resetDemo('demo-buttons-basic')">🔄 Відновити</button>
 </div>
+
+<iframe id="out-buttons-basic" class="w-100 mt-3" style="height:150px; border:1px solid #ccc;"></iframe>
+
 
         
       <!-- Картки -->
