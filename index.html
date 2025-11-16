@@ -66,17 +66,55 @@ iframe {width:100%; height:200px; border:1px solid #ddd; margin-top:5px;}
 <button class="btn btn-success">Success</button>
 <button class="btn btn-danger">Danger</button>
 
-<textarea id="code-buttons-basic">&lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
+<div style="position:relative;">
+  <textarea id="ta-buttons-basic">&lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
 &lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
 &lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
 &lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;</textarea>
 
-<br>
-<button class="btn btn-success run-btn" onclick="runDemo('code-buttons-basic','iframe-buttons-basic')">Run</button>
-<button class="btn btn-warning reset-btn" onclick="resetDemo('code-buttons-basic')">Reset</button>
+  <pre class="language-html" id="pre-buttons-basic" style="position:absolute; top:0; left:0; pointer-events:none; color:#000; background:transparent; border:1px solid transparent; padding:10px; white-space: pre-wrap;"></pre>
+</div>
+
+<button class="btn btn-success run-btn" onclick="runDemo('ta-buttons-basic','iframe-buttons-basic')">Run</button>
+<button class="btn btn-warning reset-btn" onclick="resetDemo('ta-buttons-basic')">Reset</button>
 
 <iframe id="iframe-buttons-basic"></iframe>
 </section>
+
+<script>
+const originalCode = {};
+function syncHighlight(textareaId, preId){
+  const ta = document.getElementById(textareaId);
+  const pre = document.getElementById(preId);
+  pre.textContent = ta.value;
+  Prism.highlightElement(pre);
+}
+window.onload = function(){
+  const textareas = document.querySelectorAll("textarea[id]");
+  textareas.forEach(t=>{
+    originalCode[t.id] = t.value;
+    const preId = 'pre-' + t.id.split('-')[1];
+    syncHighlight(t.id, preId);
+    t.addEventListener('input',()=>syncHighlight(t.id, preId));
+  });
+};
+function runDemo(textareaId, iframeId){
+  const code = document.getElementById(textareaId).value;
+  const iframe = document.getElementById(iframeId);
+  const doc = iframe.contentDocument || iframe.contentWindow.document;
+  doc.open();
+  doc.write(`<html><head><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></head><body style="padding:10px;">${code}</body></html>`);
+  doc.close();
+}
+function resetDemo(textareaId){
+  if(originalCode[textareaId]){
+    document.getElementById(textareaId).value = originalCode[textareaId];
+    const preId = 'pre-' + textareaId.split('-')[1];
+    syncHighlight(textareaId, preId);
+  }
+}
+</script>
+
 
 <!-- Buttons контурні -->
 <section id="buttons-outline" class="mb-5">
