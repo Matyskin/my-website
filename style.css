@@ -10,4 +10,18 @@ main h2 {
     padding-bottom: 5px;
     margin-bottom: 20px;
 }
+.code-box {
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    white-space: pre-wrap;
+    display: none; /* приховано за замовчуванням */
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.show-code-btn {
+    margin-top: 10px;
+}
 
