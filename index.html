@@ -1,10 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <title>Мій сайт</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Довідник Bootstrap компонентів</title>
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 <body>
-  <h1>Вітаю на моєму сайті!</h1>
+
+<!-- Верхнє меню -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Bootstrap Довідник</a>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- Бічне меню -->
+    <nav class="col-md-3 col-lg-2 bg-light sidebar pt-3">
+      <h5>Компоненти</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link" href="#buttons">Кнопки</a></li>
+        <li class="nav-item"><a class="nav-link" href="#cards">Картки</a></li>
+        <li class="nav-item"><a class="nav-link" href="#alerts">Повідомлення</a></li>
+        <li class="nav-item"><a class="nav-link" href="#carousel">Карусель</a></li>
+        <li class="nav-item"><a class="nav-link" href="#forms">Форми</a></li>
+      </ul>
+    </nav>
+
+    <!-- Основний контент -->
+    <main class="col-md-9 col-lg-10 p-4">
+
+      <h1 class="mb-4">Демонстраційний довідник Bootstrap компонентів</h1>
+
+      <!-- Кнопки -->
+      <section id="buttons" class="mb-5">
+        <h2>Кнопки</h2>
+        <button class="btn btn-primary">Основна кнопка</button>
+        <button class="btn btn-secondary">Сірий стиль</button>
+        <button class="btn btn-success">Успіх</button>
+        <button class="btn btn-danger">Помилка</button>
+        <button class="btn btn-outline-dark">Контур</button>
+      </section>
+
+      <!-- Картки -->
+      <section id="cards" class="mb-5">
+        <h2>Картки</h2>
+        <div class="card" style="width: 18rem;">
+          <img src="https://via.placeholder.com/300" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Заголовок картки</h5>
+            <p class="card-text">Короткий текст всередині картки.</p>
+            <a href="#" class="btn btn-primary">Перейти</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Повідомлення -->
+      <section id="alerts" class="mb-5">
+        <h2>Повідомлення (alert)</h2>
+        <div class="alert alert-success">Успішна операція!</div>
+        <div class="alert alert-warning">Попередження!</div>
+        <div class="alert alert-danger">Помилка!</div>
+      </section>
+
+      <!-- Карусель -->
+      <section id="carousel" class="mb-5">
+        <h2>Карусель</h2>
+
+        <div id="demoCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://via.placeholder.com/800x300" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+              <img src="https://via.placeholder.com/800x300/aaaaaa" class="d-block w-100">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Форми -->
+      <section id="forms" class="mb-5">
+        <h2>Форми</h2>
+        <input class="form-control mb-2" type="text" placeholder="Введіть текст...">
+        <input class="form-control mb-2" type="email" placeholder="Email">
+        <button class="btn btn-primary">Надіслати</button>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
